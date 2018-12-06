@@ -5,8 +5,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var mongoose = require('mongoose');
-var connectionString = 'mongodb://127.0.0.1:27017/pharmacies';
-mongoose.connect(connectionString, { useNewUrlParser: true }, (err) => {
+var connectionStringLocal = 'mongodb://127.0.0.1:27017/pharmacies';
+var connectionStringRemote = 'mongodb://ahmad:A16248Ba@ds127644.mlab.com:27644/pharmacy-db';
+mongoose.connect(connectionStringRemote, { useNewUrlParser: true }, (err) => {
   if (err) {
     console.log('Error connection' + err);
   } else {
